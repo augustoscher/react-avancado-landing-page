@@ -18,9 +18,9 @@ import JsonSchema from 'components/JsonSchema'
 import GET_LANDING_PAGE from 'graphql/queries/getLandingPage'
 import { LandingPageProps } from '../types/api'
 
-const Index = ({ logo }: LandingPageProps) => (
+const Index = ({ logo, header }: LandingPageProps) => (
   <>
-    <SectionHero logo={logo} />
+    <SectionHero logo={logo} header={header} />
     <SectionAboutProject />
     <SectionTech />
     <SectionConcepts />
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // log aparece no console do server e não no browser, pois esse método
   // roda no lado do server
-  // console.log(landingPage)
+  console.log(landingPage)
 
   return {
     props: {
