@@ -1,3 +1,4 @@
+import { Title } from '../components/SectionHero/styles'
 export type LogoProps = {
   alternativeText: string
   url: string
@@ -38,9 +39,19 @@ export type TechProps = {
   ]
 }
 
+export type ConceptsProps = {
+  title: string
+  concepts: [
+    {
+      title: string
+    }
+  ]
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
   sectionAboutProject: AboutProjectProps
   sectionTech: TechProps
+  sectionConcepts: ConceptsProps
 }
