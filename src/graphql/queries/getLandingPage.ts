@@ -22,7 +22,7 @@ fragment header on LandingPage {
 }
 
 fragment aboutProject on LandingPage {
-  sectionAboutProject{
+  sectionAboutProject {
     title
     description
     image {
@@ -32,11 +32,25 @@ fragment aboutProject on LandingPage {
   }
 }
 
+fragment sectionTech on LandingPage {
+  sectionTech {
+    title
+    techIcons {
+      icon {
+        name
+        url
+        alternativeText
+      }
+    }
+  }
+}
+
 query GET_LANDING_PAGE {
   landingPage {
     ...logo
     ...header
     ...aboutProject
+    ...sectionTech
   }
 }
 `
