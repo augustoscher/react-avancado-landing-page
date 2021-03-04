@@ -92,6 +92,14 @@ fragment sectionAboutUs on LandingPage {
       name
       role
       description
+      photo {
+        alternativeText
+        url
+      }
+      socialLinks {
+        title
+        url
+      }
     }
   }
 }

@@ -4,22 +4,26 @@ import Heading from 'components/Heading'
 import Container from 'components/Container'
 import ProfileCard from 'components/ProfileCard'
 
-import content from './content'
 import * as S from './styles'
+import { AboutUsProps } from 'types/api'
 
-const SectionAboutUs = () => (
+type Props = {
+  about: AboutUsProps
+}
+
+const SectionAboutUs = ({ about }: Props) => (
   <Container>
-    <Heading reverseColor>Quem somos nós?</Heading>
+    <Heading reverseColor>{about.title}</Heading>
 
     <S.Content>
-      {content.map((profile) => (
+      {about.authors.map(({ name, role, description, photo, socialLinks }) => (
         <ProfileCard
-          key={profile.name}
-          name={profile.name}
-          role={profile.role}
-          image={profile.image}
-          socialLinks={profile.socialLinks}
-          description={profile.description}
+          key={name}
+          name={name}
+          role={role}
+          photo={photo}
+          socialLinks={socialLinks}
+          description={description}
         />
       ))}
     </S.Content>
