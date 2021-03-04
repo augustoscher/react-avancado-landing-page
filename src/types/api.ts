@@ -48,10 +48,22 @@ export type ConceptsProps = {
   ]
 }
 
+export type ModulesProps = {
+  title: string
+  modules: [
+    {
+      title: string
+      subtitle: string
+      description: string
+    }
+  ]
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
   sectionAboutProject: AboutProjectProps
   sectionTech: TechProps
   sectionConcepts: ConceptsProps
+  sectionModules: ModulesProps
 }
