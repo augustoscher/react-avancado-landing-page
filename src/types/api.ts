@@ -64,6 +64,17 @@ export type AgendaProps = {
   description: string
 }
 
+export type PricingBoxProps = {
+  priceInstallment: number
+  numberInstallmentes: number
+  totalPrice: number
+  benefits: string
+  button: {
+    url: string
+    label: string
+  }
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
@@ -72,4 +83,5 @@ export type LandingPageProps = {
   sectionConcepts: ConceptsProps
   sectionModules: ModulesProps
   sectionAgenda: AgendaProps
+  pricingBox: PricingBoxProps
 }
