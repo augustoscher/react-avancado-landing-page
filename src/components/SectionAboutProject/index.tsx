@@ -7,31 +7,24 @@ import * as S from './styles'
 import { AboutProjectProps } from 'types/api'
 import { getImageUrl } from '../../utils/getImageUrl'
 
-type Props = {
-  about: AboutProjectProps
-}
-
-const SectionAboutProject = ({ about }: Props) => (
+const SectionAboutProject = ({
+  title,
+  description,
+  image
+}: AboutProjectProps) => (
   <S.Wrapper>
     <Container>
       <S.Container>
         <S.Image>
-          <source
-            srcSet={require('@images/project.png?webp')}
-            type="image/webp"
-          />
-          <source srcSet={require('@images/project.png')} type="image/png" />
           <img
-            src={getImageUrl(about.image.url)}
+            src={getImageUrl(image.url)}
             loading="lazy"
-            alt={about.image.alternativeText}
+            alt={image.alternativeText}
           />
         </S.Image>
         <div>
-          <Heading>{about.title}</Heading>
-          <S.Text
-            dangerouslySetInnerHTML={{ __html: about.description }}
-          ></S.Text>
+          <Heading>{title}</Heading>
+          <S.Text dangerouslySetInnerHTML={{ __html: description }}></S.Text>
         </div>
       </S.Container>
     </Container>

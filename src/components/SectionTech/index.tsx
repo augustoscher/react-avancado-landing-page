@@ -7,16 +7,12 @@ import * as S from './styles'
 import { TechProps } from '../../types/api'
 import { getImageUrl } from '../../utils/getImageUrl'
 
-type Props = {
-  tech: TechProps
-}
-
-const SectionTech = ({ tech }: Props) => (
+const SectionTech = ({ title, techIcons }: TechProps) => (
   <S.Wrapper>
     <Container>
-      <Heading reverseColor>{tech.title}</Heading>
+      <Heading reverseColor>{title}</Heading>
       <S.IconsContainer>
-        {tech.techIcons.map(({ icon }) => (
+        {techIcons.map(({ icon }) => (
           <S.Icon key={icon.name}>
             <S.Icons
               src={getImageUrl(icon.url)}
