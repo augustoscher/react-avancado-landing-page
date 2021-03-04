@@ -54,6 +54,73 @@ fragment sectionConcepts on LandingPage {
   }
 }
 
+fragment sectionModules on LandingPage {
+  sectionModules {
+    title
+    modules {
+      title
+      subtitle
+      description
+    }
+  }
+}
+
+fragment sectionAgenda on LandingPage {
+  sectionAgenda {
+    title
+    description
+  }
+}
+
+fragment pricingBox on LandingPage {
+  pricingBox {
+    priceInstallment
+    numberInstallmentes
+    totalPrice
+    benefits
+    button {
+      url
+      label
+    }
+  }
+}
+
+fragment sectionAboutUs on LandingPage {
+  sectionAboutUs {
+    title
+    authors {
+      name
+      role
+      description
+    }
+  }
+}
+
+fragment sectionReviews on LandingPage {
+  sectionReviews {
+    title
+    reviews {
+      name
+      text
+      photo {
+        url
+        name
+        alternativeText
+      }
+    }
+  }
+}
+
+fragment sectionFac on LandingPage {
+  sectionFac {
+    title
+    questions {
+      question
+      answer
+    }
+  }
+}
+
 query GET_LANDING_PAGE {
   landingPage {
     ...logo
@@ -61,6 +128,12 @@ query GET_LANDING_PAGE {
     ...aboutProject
     ...sectionTech
     ...sectionConcepts
+    ...sectionModules
+    ...sectionAgenda
+    ...pricingBox
+    ...sectionAboutUs
+    ...sectionReviews
+    ...sectionFac
   }
 }
 `
