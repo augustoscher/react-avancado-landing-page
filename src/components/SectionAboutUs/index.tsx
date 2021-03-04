@@ -7,16 +7,12 @@ import ProfileCard from 'components/ProfileCard'
 import * as S from './styles'
 import { AboutUsProps } from 'types/api'
 
-type Props = {
-  about: AboutUsProps
-}
-
-const SectionAboutUs = ({ about }: Props) => (
+const SectionAboutUs = ({ title, authors }: AboutUsProps) => (
   <Container>
-    <Heading reverseColor>{about.title}</Heading>
+    <Heading reverseColor>{title}</Heading>
 
     <S.Content>
-      {about.authors.map(({ name, role, description, photo, socialLinks }) => (
+      {authors.map(({ name, role, description, photo, socialLinks }) => (
         <ProfileCard
           key={name}
           name={name}

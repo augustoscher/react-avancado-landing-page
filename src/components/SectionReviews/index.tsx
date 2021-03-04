@@ -5,7 +5,6 @@ import Container from 'components/Container'
 import Heading from 'components/Heading'
 import ReviewCard from 'components/ReviewCard'
 
-import reviews from './content'
 import * as S from './styles'
 import { ReviewsProps } from 'types/api'
 
@@ -31,17 +30,13 @@ const settings = {
   ]
 }
 
-type Props = {
-  reviews: ReviewsProps
-}
-
-const SectionReviews = ({ reviews }: Props) => (
+const SectionReviews = ({ title, reviews }: ReviewsProps) => (
   <Container>
-    <Heading reverseColor>{reviews.title}</Heading>
+    <Heading reverseColor>{title}</Heading>
 
     <S.Content>
       <Slider {...settings}>
-        {reviews.reviews.map(({ name, photo, text }, index) => (
+        {reviews.map(({ name, photo, text }, index) => (
           <ReviewCard
             key={index}
             name={name}

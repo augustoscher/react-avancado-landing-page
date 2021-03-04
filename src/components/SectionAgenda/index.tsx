@@ -6,14 +6,10 @@ import Heading from 'components/Heading'
 import * as S from './styles'
 import { AgendaProps } from 'types/api'
 
-type Props = {
-  agenda: AgendaProps
-}
-
-const SectionAgenda = ({ agenda }: Props) => (
+const SectionAgenda = ({ title, description }: AgendaProps) => (
   <Container id="agenda">
-    <Heading reverseColor>{agenda.title}</Heading>
-    <S.Text dangerouslySetInnerHTML={{ __html: agenda.description }}></S.Text>
+    <Heading reverseColor>{title}</Heading>
+    <S.Text dangerouslySetInnerHTML={{ __html: description }}></S.Text>
   </Container>
 )
 

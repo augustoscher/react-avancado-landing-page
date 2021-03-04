@@ -9,46 +9,30 @@ import { PricingBoxProps } from '../../types/api'
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
-type Props = {
-  pricingBox: PricingBoxProps
-}
-
-const PricingBox = ({ pricingBox }: Props) => (
+const PricingBox = ({
+  totalPrice,
+  priceInstallment,
+  numberInstallmentes,
+  benefits,
+  button
+}: PricingBoxProps) => (
   <S.Box>
     <S.Prices>
       <S.FullPrice>
-        De <span>{`R$${pricingBox.totalPrice}`}</span> por apenas
+        De <span>{`R$${totalPrice}`}</span> por apenas
       </S.FullPrice>
       <S.DiscountPrice>
-        <span>{pricingBox.numberInstallmentes}x de</span>{' '}
-        {`R$${pricingBox.priceInstallment}`}
+        <span>{numberInstallmentes}x de</span> {`R$${priceInstallment}`}
       </S.DiscountPrice>
     </S.Prices>
-    {pricingBox.benefits}
-    {/* <S.BenefitsList>
-      <S.BenefitsItem>
-        Acesso aos <strong>6 módulos</strong> assim que lançados
-      </S.BenefitsItem>
+    <S.BenefitsList dangerouslySetInnerHTML={{ __html: benefits }} />
 
-      <S.BenefitsItem>
-        Código de <strong>todo o projeto</strong> separado em commits
-      </S.BenefitsItem>
-
-      <S.BenefitsItem>
-        Contato <strong>direto</strong> com os instrutores via Slack
-      </S.BenefitsItem>
-
-      <S.BenefitsItem>
-        <strong>Lives exclusivas</strong> durante o curso
-      </S.BenefitsItem>
-    </S.BenefitsList> */}
-
-    <Button href={pricingBox.button.url} onClick={onClick} withPrice>
-      <p>{pricingBox.button.label}</p>
+    <Button href={button.url} onClick={onClick} withPrice>
+      <p>{button.label}</p>
       <div>
-        <S.ButtonFullPrice>{`R$${pricingBox.totalPrice}`}</S.ButtonFullPrice>
+        <S.ButtonFullPrice>{`R$${totalPrice}`}</S.ButtonFullPrice>
         <S.ButtonDiscountPrice>
-          {`R$${pricingBox.numberInstallmentes * pricingBox.priceInstallment}`}
+          {`R$${numberInstallmentes * priceInstallment}`}
         </S.ButtonDiscountPrice>
       </div>
     </Button>

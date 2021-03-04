@@ -34,15 +34,11 @@ const ReviewCard: React.FC<Props> = ({ id, name, photo, description }) => {
   return (
     <S.Card>
       <S.User>
-        <S.Image>
-          <source srcSet={getImageUrl(photo.url)} type="image/webp" />
-          <source srcSet={getImageUrl(photo.url)} type="image/jpg" />
-          <img
-            src={getImageUrl(photo.url)}
-            loading="lazy"
-            alt={photo.alternativeText}
-          />
-        </S.Image>
+        <S.Image
+          src={getImageUrl(photo.url)}
+          loading="lazy"
+          alt={photo.alternativeText}
+        />
         <S.Name>{name}</S.Name>
       </S.User>
       <S.Text>
