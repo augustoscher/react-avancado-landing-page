@@ -111,6 +111,16 @@ export type ReviewsProps = {
   ]
 }
 
+export type FacProps = {
+  title: string
+  questions: [
+    {
+      question: string
+      answer: string
+    }
+  ]
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
@@ -122,4 +132,5 @@ export type LandingPageProps = {
   pricingBox: PricingBoxProps
   sectionAboutUs: AboutUsProps
   sectionReviews: ReviewsProps
+  sectionFac: FacProps
 }

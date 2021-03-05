@@ -28,7 +28,8 @@ const Index = ({
   sectionAgenda,
   pricingBox,
   sectionAboutUs,
-  sectionReviews
+  sectionReviews,
+  sectionFac
 }: LandingPageProps) => (
   <>
     <SectionHero logo={logo} header={header} />
@@ -40,7 +41,7 @@ const Index = ({
     <PricingBox {...pricingBox} />
     <SectionAboutUs {...sectionAboutUs} />
     <SectionReviews {...sectionReviews} />
-    <SectionFaq />
+    <SectionFaq {...sectionFac} />
     <Footer />
     <JsonSchema />
   </>
@@ -51,7 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // log aparece no console do server e não no browser, pois esse método
   // roda no lado do server
-  // console.log(landingPage.sectionTech)
+  console.log(landingPage.sectionFac)
 
   return {
     props: {
