@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // log aparece no console do server e não no browser, pois esse método
   // roda no lado do server
-  console.log(landingPage.sectionFac)
+  // console.log(landingPage.sectionFac)
 
   return {
     props: {
